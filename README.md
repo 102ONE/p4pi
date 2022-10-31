@@ -51,7 +51,7 @@ sudo brctl addif br0 <eth0/wlan0> dtap0
 sudo ifconfig br0 up
 ```
 
-## Pi as WiFi AP
+ Pi as WiFi AP
 
 [Based on this](https://www.raspberrypi.org/documentation/configuration/wireless/access-point-routed.md)
 
@@ -74,12 +74,12 @@ Replace `/etc/dnsmasq.conf` with
 interface=wlan0
 dhcp-range=192.168.4.2,192.168.4.20,255.255.255.0,24h
 ```
-### Configure hostapd
+ Configure hostapd
 Edit `/etc/hostapd/hostapd.conf`:  (fiddle with channel if needed, unfortunately the auto channel scan is not supported by the hardware)
 ```bash
-country_code=HU
+country_code=au
 interface=wlan0
-ssid=<NameOfNetwork>
+ssid=<bakin4th>
 hw_mode=a
 channel=48
 ieee80211d=1
@@ -90,13 +90,13 @@ macaddr_acl=0
 auth_algs=1
 ignore_broadcast_ssid=0
 wpa=2
-wpa_passphrase=<Password>
+wpa_passphrase=<longshlong>
 wpa_key_mgmt=WPA-PSK
 wpa_pairwise=TKIP
 rsn_pairwise=CCMP
 ```
 
-### Start hostapd
+ Start hostapd
 ```bash
 sudo systemctl start hostapd # or enable and restart
 ```
@@ -138,7 +138,7 @@ uncomment the following line in `/etc/hostapd/hostapd.conf`:
 
 With pcap PMD
 
-## Ethernet
+ Ethernet
 
 baseline:
 ```
@@ -177,7 +177,7 @@ T4P4S with Tap PMD:
 
 ```
 
-## WiFi
+ WiFi
 
 Baseline:
 ```
